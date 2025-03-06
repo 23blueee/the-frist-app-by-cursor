@@ -1,0 +1,36 @@
+/* 隐藏所有滚动条但保留滚动功能 */
+
+/* 针对 Webkit 浏览器 (Chrome, Safari, newer versions of Opera) */
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+/* 针对 Firefox */
+* {
+    scrollbar-width: none;
+}
+
+/* 针对 IE 和 Edge */
+* {
+    -ms-overflow-style: none;
+}
+
+/* 确保 iframe 内容也没有滚动条 */
+iframe {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+iframe::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+/* 确保内容区域仍然可以滚动 */
+.content-area, .app-container, body {
+    overflow-y: auto;
+    overflow-x: hidden;
+} 
