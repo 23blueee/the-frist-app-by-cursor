@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Meditation App - Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9ff;
+        }
+        
+        .player-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        
+        .player-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .back-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .meditation-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .meditation-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .meditation-subtitle {
+            color: var(--light-text);
+            font-size: 16px;
+        }
+        
+        .visualization {
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #5a6ff0, #b06af0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(90, 111, 240, 0.3);
+        }
+        
+        .visualization::before {
+            content: '';
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background-color: white;
+            opacity: 0.2;
+            animation: pulse 4s infinite ease-in-out;
+        }
+        
+        .visualization::after {
+            content: '';
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: white;
+            opacity: 0.3;
+            animation: pulse 4s infinite ease-in-out 1s;
+        }
+        
+        .visualization-inner {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background-color: white;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1);
+                opacity: 0.2;
+            }
+            100% {
+                transform: scale(0.8);
+                opacity: 0.3;
+            }
+        }
+        
+        .timer {
+            font-size: 48px;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .progress-container {
+            margin-bottom: 30px;
+        }
+        
+        .progress-bar {
+            height: 6px;
+            background-color: rgba(90, 111, 240, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            width: 30%;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+        
+        .progress-time {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: var(--light-text);
+        }
+        
+        .player-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+        
+        .control-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+        }
+        
+        .play-button {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(90, 111, 240, 0.4);
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <div class="player-header">
+            <a href="home.html" class="back-button">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            <div class="options-button">
+                <i class="fas fa-ellipsis-h"></i>
+            </div>
+        </div>
+        
+        <div class="meditation-info">
+            <div class="meditation-title">Morning Calm</div>
+            <div class="meditation-subtitle">Day 3 of 10</div>
+        </div>
+        
+        <div class="visualization">
+            <div class="visualization-inner">
+                <i class="fas fa-spa"></i>
+            </div>
+        </div>
+        
+        <div class="timer">08:32</div>
+        
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-bar-fill"></div>
+            </div>
+            <div class="progress-time">
+                <div>3:28</div>
+                <div>10:00</div>
+            </div>
+        </div>
+        
+        <div class="player-controls">
+            <div class="control-button">
+                <i class="fas fa-backward-step"></i>
+            </div>
+            <div class="control-button">
+                <i class="fas fa-backward"></i>
+            </div>
+            <div class="play-button">
+                <i class="fas fa-pause"></i>
+            </div>
+            <div class="control-button">
+                <i class="fas fa-forward"></i>
+            </div>
+            <div class="control-button">
+                <i class="fas fa-forward-step"></i>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

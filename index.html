@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation App Prototype</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f5f7fa;
+        }
+        .phone-container {
+            width: 390px;
+            height: 844px;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            position: relative;
+            margin: 20px;
+            display: inline-block;
+        }
+        .phone-frame {
+            width: 100%;
+            height: 100%;
+            border: 12px solid #000;
+            border-radius: 40px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+        .status-bar {
+            height: 44px;
+            background-color: #000;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 14px;
+        }
+        iframe {
+            width: 100%;
+            height: calc(100% - 44px);
+            border: none;
+        }
+        .screen-title {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body class="p-8">
+    <h1 class="text-3xl font-bold mb-8 text-center">Meditation App Prototype</h1>
+    <p class="text-center mb-8 max-w-3xl mx-auto">A high-fidelity prototype for a meditation app similar to Headspace. Browse through all screens below.</p>
+    
+    <div class="flex flex-wrap justify-center">
+        <!-- Splash Screen -->
+        <div class="flex flex-col items-center">
+            <div class="phone-container">
+                <div class="phone-frame">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <div>
+                            <i class="fas fa-signal"></i>
+                            <i class="fas fa-wifi ml-1"></i>
+                            <i class="fas fa-battery-full ml-1"></i>
+                        </div>
+                    </div>
+                    <iframe src="splash.html"></iframe>
+                </div>
+            </div>
+            <div class="screen-title">Splash Screen</div>
+        </div>
+        
+        <!-- Onboarding Screen -->
+        <div class="flex flex-col items-center">
+            <div class="phone-container">
+                <div class="phone-frame">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <div>
+                            <i class="fas fa-signal"></i>
+                            <i class="fas fa-wifi ml-1"></i>
+                            <i class="fas fa-battery-full ml-1"></i>
+                        </div>
+                    </div>
+                    <iframe src="onboarding.html"></iframe>
+                </div>
+            </div>
+            <div class="screen-title">Onboarding</div>
+        </div>
+        
+        <!-- Home Screen -->
+        <div class="flex flex-col items-center">
+            <div class="phone-container">
+                <div class="phone-frame">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <div>
+                            <i class="fas fa-signal"></i>
+                            <i class="fas fa-wifi ml-1"></i>
+                            <i class="fas fa-battery-full ml-1"></i>
+                        </div>
+                    </div>
+                    <iframe src="home.html"></iframe>
+                </div>
+            </div>
+            <div class="screen-title">Home</div>
+        </div>
+        
+        <!-- Meditation Player -->
+        <div class="flex flex-col items-center">
+            <div class="phone-container">
+                <div class="phone-frame">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <div>
+                            <i class="fas fa-signal"></i>
+                            <i class="fas fa-wifi ml-1"></i>
+                            <i class="fas fa-battery-full ml-1"></i>
+                        </div>
+                    </div>
+                    <iframe src="meditation-player.html"></iframe>
+                </div>
+            </div>
+            <div class="screen-title">Meditation Player</div>
+        </div>
+        
+        <!-- Sleep Section -->
+        <div class="flex flex-col items-center">
+            <div class="phone-container">
+                <div class="phone-frame">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <div>
+                            <i class="fas fa-signal"></i>
+                            <i class="fas fa-wifi ml-1"></i>
+                            <i class="fas fa-battery-full ml-1"></i>
+                        </div>
+                    </div>
+                    <iframe src="sleep.html"></iframe>
+                </div>
+            </div>
+            <div class="screen-title">Sleep</div>
+        </div>
+        
+        <!-- Discover Screen -->
+        <div class="flex flex-col items-center">
+            <div class="phone-container">
+                <div class="phone-frame">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <div>
+                            <i class="fas fa-signal"></i>
+                            <i class="fas fa-wifi ml-1"></i>
+                            <i class="fas fa-battery-full ml-1"></i>
+                        </div>
+                    </div>
+                    <iframe src="discover.html"></iframe>
+                </div>
+            </div>
+            <div class="screen-title">Discover</div>
+        </div>
+        
+        <!-- Profile Screen -->
+        <div class="flex flex-col items-center">
+            <div class="phone-container">
+                <div class="phone-frame">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <div>
+                            <i class="fas fa-signal"></i>
+                            <i class="fas fa-wifi ml-1"></i>
+                            <i class="fas fa-battery-full ml-1"></i>
+                        </div>
+                    </div>
+                    <iframe src="profile.html"></iframe>
+                </div>
+            </div>
+            <div class="screen-title">Profile</div>
+        </div>
+        
+        <!-- Settings Screen -->
+        <div class="flex flex-col items-center">
+            <div class="phone-container">
+                <div class="phone-frame">
+                    <div class="status-bar">
+                        <span>9:41</span>
+                        <div>
+                            <i class="fas fa-signal"></i>
+                            <i class="fas fa-wifi ml-1"></i>
+                            <i class="fas fa-battery-full ml-1"></i>
+                        </div>
+                    </div>
+                    <iframe src="settings.html"></iframe>
+                </div>
+            </div>
+            <div class="screen-title">Settings</div>
+        </div>
+    </div>
+</body>
+</html> 

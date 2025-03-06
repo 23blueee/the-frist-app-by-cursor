@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Meditation App - Sleep</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .sleep-header {
+            background: linear-gradient(to bottom, #1a237e, #3949ab);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 20px;
+        }
+        
+        .sleep-header h2 {
+            margin-bottom: 10px;
+        }
+        
+        .sleep-header p {
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .sleep-stats {
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 15px;
+        }
+        
+        .sleep-stat {
+            flex: 1;
+            text-align: center;
+            padding: 0 10px;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .sleep-stat:last-child {
+            border-right: none;
+        }
+        
+        .sleep-stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .sleep-stat-label {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        .category-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding: 0 20px;
+        }
+        
+        .category-tab {
+            padding: 10px 20px;
+            margin-right: 10px;
+            background-color: var(--light-background);
+            border-radius: 20px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+        
+        .category-tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .sleep-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 16px;
+            background-color: white;
+            box-shadow: var(--shadow);
+        }
+        
+        .sleep-card-image {
+            height: 160px;
+            position: relative;
+        }
+        
+        .sleep-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .sleep-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+        }
+        
+        .sleep-card-content {
+            padding: 16px;
+        }
+        
+        .sleep-card-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        
+        .sleep-card-description {
+            color: var(--light-text);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .sleep-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .sleep-card-duration {
+            font-size: 14px;
+            color: var(--light-text);
+        }
+        
+        .sleep-card-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="sleep-header">
+            <h2>Sleep Better</h2>
+            <p>Drift off with calming sounds and stories</p>
+            <div class="sleep-stats">
+                <div class="sleep-stat">
+                    <div class="sleep-stat-value">7.2h</div>
+                    <div class="sleep-stat-label">Avg. Sleep</div>
+                </div>
+                <div class="sleep-stat">
+                    <div class="sleep-stat-value">8</div>
+                    <div class="sleep-stat-label">Sessions</div>
+                </div>
+                <div class="sleep-stat">
+                    <div class="sleep-stat-value">92%</div>
+                    <div class="sleep-stat-label">Quality</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category-tabs">
+            <div class="category-tab active">All</div>
+            <div class="category-tab">Sleepcasts</div>
+            <div class="category-tab">Music</div>
+            <div class="category-tab">Soundscapes</div>
+            <div class="category-tab">Meditations</div>
+        </div>
+        
+        <div class="content-area" style="padding-top: 0;">
+            <!-- Featured sleep content -->
+            <div class="sleep-card">
+                <div class="sleep-card-image">
+                    <img src="https://images.unsplash.com/photo-1475483768296-6163e08872a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Rainforest Sounds">
+                    <div class="sleep-card-overlay">
+                        <span class="badge" style="background-color: rgba(255,255,255,0.3); color: white; margin-bottom: 8px;">FEATURED</span>
+                        <h3>Rainforest Ambience</h3>
+                    </div>
+                </div>
+                <div class="sleep-card-content">
+                    <div class="sleep-card-title">Rainforest Ambience</div>
+                    <div class="sleep-card-description">Immerse yourself in the soothing sounds of a tropical rainforest at night.</div>
+                    <div class="sleep-card-footer">
+                        <div class="sleep-card-duration">45 MIN</div>
+                        <div class="sleep-card-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sleep stories -->
+            <h3 class="mb-2">Sleep Stories</h3>
+            <div class="grid">
+                <div class="meditation-card">
+                    <img src="https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ocean Voyage">
+                    <div class="meditation-card-content">
+                        <div style="font-size: 12px; margin-bottom: 4px;">30 MIN</div>
+                        <div style="font-weight: 600;">Ocean Voyage</div>
+                    </div>
+                </div>
+                <div class="meditation-card">
+                    <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Sunset Meadow">
+                    <div class="meditation-card-content">
+                        <div style="font-size: 12px; margin-bottom: 4px;">25 MIN</div>
+                        <div style="font-weight: 600;">Sunset Meadow</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sleep music -->
+            <h3 class="mb-2 mt-4">Sleep Music</h3>
+            <div class="grid">
+                <div class="meditation-card">
+                    <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Gentle Piano">
+                    <div class="meditation-card-content">
+                        <div style="font-size: 12px; margin-bottom: 4px;">60 MIN</div>
+                        <div style="font-weight: 600;">Gentle Piano</div>
+                    </div>
+                </div>
+                <div class="meditation-card">
+                    <img src="https://images.unsplash.com/photo-1477233534935-f5e6fe7c1159?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Ambient Sounds">
+                    <div class="meditation-card-content">
+                        <div style="font-size: 12px; margin-bottom: 4px;">45 MIN</div>
+                        <div style="font-weight: 600;">Ambient Sounds</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sleep meditations -->
+            <h3 class="mb-2 mt-4">Sleep Meditations</h3>
+            <div class="grid">
+                <div class="meditation-card">
+                    <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Body Scan">
+                    <div class="meditation-card-content">
+                        <div style="font-size: 12px; margin-bottom: 4px;">15 MIN</div>
+                        <div style="font-weight: 600;">Body Scan</div>
+                    </div>
+                </div>
+                <div class="meditation-card">
+                    <img src="https://images.unsplash.com/photo-1511295742362-92c96b1cf484?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Deep Sleep">
+                    <div class="meditation-card-content">
+                        <div style="font-size: 12px; margin-bottom: 4px;">20 MIN</div>
+                        <div style="font-weight: 600;">Deep Sleep</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom navigation bar -->
+        <div class="tab-bar">
+            <a href="home.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-home"></i></div>
+                <div>Home</div>
+            </a>
+            <a href="discover.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-compass"></i></div>
+                <div>Discover</div>
+            </a>
+            <a href="sleep.html" class="tab-item active">
+                <div class="tab-icon"><i class="fas fa-moon"></i></div>
+                <div>Sleep</div>
+            </a>
+            <a href="profile.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-user"></i></div>
+                <div>Profile</div>
+            </a>
+            <a href="settings.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-cog"></i></div>
+                <div>Settings</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html> 

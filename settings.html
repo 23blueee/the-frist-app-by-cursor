@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Meditation App - Settings</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .settings-header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--light-background);
+            margin-bottom: 20px;
+        }
+        
+        .settings-title {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .settings-section {
+            margin-bottom: 30px;
+        }
+        
+        .settings-section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--light-text);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .settings-list {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .settings-item {
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--light-background);
+        }
+        
+        .settings-item:last-child {
+            border-bottom: none;
+        }
+        
+        .settings-item-icon {
+            width: 40px;
+            color: var(--primary-color);
+            font-size: 18px;
+        }
+        
+        .settings-item-content {
+            flex: 1;
+        }
+        
+        .settings-item-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .settings-item-description {
+            font-size: 14px;
+            color: var(--light-text);
+        }
+        
+        .settings-item-action {
+            color: var(--light-text);
+        }
+        
+        .settings-item-action i {
+            font-size: 16px;
+        }
+        
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 28px;
+        }
+        
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(22px);
+        }
+        
+        .logout-button {
+            display: block;
+            text-align: center;
+            padding: 16px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            color: #e74c3c;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            text-decoration: none;
+        }
+        
+        .version-info {
+            text-align: center;
+            font-size: 14px;
+            color: var(--light-text);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="content-area">
+            <!-- Settings header -->
+            <div class="settings-header">
+                <div class="settings-title">Settings</div>
+            </div>
+            
+            <!-- Account settings -->
+            <div class="settings-section">
+                <div class="settings-section-title">Account</div>
+                <div class="settings-list">
+                    <div class="settings-item">
+                        <div class="settings-item-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="settings-item-content">
+                            <div class="settings-item-title">Profile</div>
+                            <div class="settings-item-description">Alex Johnson • alex@example.com</div>
+                        </div>
+                        <div class="settings-item-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-item-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="settings-item-content">
+                            <div class="settings-item-title">Notifications</div>
+                            <div class="settings-item-description">Reminders, updates</div>
+                        </div>
+                        <div class="settings-item-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-item-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="settings-item-content">
+                            <div class="settings-item-title">Privacy</div>
+                            <div class="settings-item-description">Data usage, permissions</div>
+                        </div>
+                        <div class="settings-item-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Preferences -->
+            <div class="settings-section">
+                <div class="settings-section-title">Preferences</div>
+                <div class="settings-list">
+                    <div class="settings-item">
+                        <div class="settings-item-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="settings-item-content">
+                            <div class="settings-item-title">Meditation Reminders</div>
+                            <div class="settings-item-description">Daily at 7:30 AM</div>
+                        </div>
+                        <div class="settings-item-action">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-item-icon">
+                            <i class="fas fa-moon"></i>
+                        </div>
+                        <div class="settings-item-content">
+                            <div class="settings-item-title">Bedtime Reminders</div>
+                            <div class="settings-item-description">Daily at 10:00 PM</div>
+                        </div>
+                        <div class="settings-item-action">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-item-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <div class="settings-item-content">
+                            <div class="settings-item-title">Download over Wi-Fi only</div>
+                            <div class="settings-item-description">Save mobile data</div>
+                        </div>
+                        <div class="settings-item-action">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-item-icon">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <div class="settings-item-content">
+                            <div class="settings-item-title">Sound Settings</div>
+                            <div class="settings-item-description">Background sounds, volume</div>
+                        </div>
+                        <div class="settings-item-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Support -->
+            <div class="settings-section">
+                <div class="settings-section-title">Support</div>
+                <div class="settings-list">
+                    <div class="settings-item">
+                        <div class="settings-item-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="settings-item-content">
+                            <div class="settings-item-title">Help Center</div>
+                            <div class="settings-item-description">FAQs, contact support</div>
+                        </div>
+                        <div class="settings-item-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-item-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="settings-item-content">
+                            <div class="settings-item-title">Rate the App</div>
+                            <div class="settings-item-description">Share your feedback</div>
+                        </div>
+                        <div class="settings-item-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="settings-item">
+                        <div class="settings-item-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <div class="settings-item-content">
+                            <div class="settings-item-title">Share with Friends</div>
+                            <div class="settings-item-description">Invite others to join</div>
+                        </div>
+                        <div class="settings-item-action">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Logout button -->
+            <a href="#" class="logout-button">
+                Log Out
+            </a>
+            
+            <!-- Version info -->
+            <div class="version-info">
+                Version 1.0.0
+            </div>
+        </div>
+        
+        <!-- Bottom navigation bar -->
+        <div class="tab-bar">
+            <a href="home.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-home"></i></div>
+                <div>Home</div>
+            </a>
+            <a href="discover.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-compass"></i></div>
+                <div>Discover</div>
+            </a>
+            <a href="sleep.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-moon"></i></div>
+                <div>Sleep</div>
+            </a>
+            <a href="profile.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-user"></i></div>
+                <div>Profile</div>
+            </a>
+            <a href="settings.html" class="tab-item active">
+                <div class="tab-icon"><i class="fas fa-cog"></i></div>
+                <div>Settings</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html> 

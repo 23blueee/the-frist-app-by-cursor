@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Meditation App - Discover</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: var(--light-background);
+            border-radius: 50px;
+            padding: 10px 16px;
+            margin-bottom: 20px;
+        }
+        
+        .search-icon {
+            color: var(--light-text);
+            margin-right: 10px;
+        }
+        
+        .search-input {
+            border: none;
+            background: transparent;
+            flex: 1;
+            font-size: 16px;
+            color: var(--text-color);
+            outline: none;
+        }
+        
+        .search-input::placeholder {
+            color: var(--light-text);
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        
+        .category-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 1 / 0.8;
+        }
+        
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .category-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+        }
+        
+        .category-card-title {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+        
+        .category-card-count {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        .featured-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        .section-link {
+            color: var(--primary-color);
+            font-size: 14px;
+            text-decoration: none;
+        }
+        
+        .featured-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 16 / 9;
+            margin-bottom: 16px;
+        }
+        
+        .featured-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .featured-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+        }
+        
+        .featured-card-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+        
+        .featured-card-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .featured-card-description {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 12px;
+        }
+        
+        .featured-card-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            background-color: white;
+            color: var(--primary-color);
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .featured-card-button i {
+            margin-right: 6px;
+        }
+        
+        .popular-courses {
+            margin-bottom: 30px;
+        }
+        
+        .course-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 16px;
+            padding-bottom: 16px;
+        }
+        
+        .course-card {
+            min-width: 200px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            background-color: white;
+            box-shadow: var(--shadow);
+        }
+        
+        .course-card-image {
+            height: 120px;
+        }
+        
+        .course-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .course-card-content {
+            padding: 16px;
+        }
+        
+        .course-card-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .course-card-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--light-text);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="content-area">
+            <!-- Search bar -->
+            <div class="search-bar">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <input type="text" class="search-input" placeholder="Search meditations, courses...">
+            </div>
+            
+            <!-- Categories -->
+            <h3 class="mb-3">Categories</h3>
+            <div class="category-grid">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Stress & Anxiety">
+                    <div class="category-card-overlay">
+                        <div class="category-card-title">Stress & Anxiety</div>
+                        <div class="category-card-count">28 sessions</div>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1512438248247-f0f2a5a8b7f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Sleep">
+                    <div class="category-card-overlay">
+                        <div class="category-card-title">Sleep</div>
+                        <div class="category-card-count">42 sessions</div>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Personal Growth">
+                    <div class="category-card-overlay">
+                        <div class="category-card-title">Personal Growth</div>
+                        <div class="category-card-count">19 sessions</div>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1529693662653-9d480530a697?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Focus">
+                    <div class="category-card-overlay">
+                        <div class="category-card-title">Focus</div>
+                        <div class="category-card-count">15 sessions</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Featured content -->
+            <div class="featured-section">
+                <div class="section-header">
+                    <div class="section-title">Featured</div>
+                    <a href="#" class="section-link">See all</a>
+                </div>
+                
+                <div class="featured-card">
+                    <img src="https://images.unsplash.com/photo-1536623975707-c4b3b2af565d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="30 Days of Mindfulness">
+                    <div class="featured-card-overlay">
+                        <div class="featured-card-badge">NEW COURSE</div>
+                        <div class="featured-card-title">30 Days of Mindfulness</div>
+                        <div class="featured-card-description">Transform your daily routine with our guided mindfulness journey</div>
+                        <div class="featured-card-button">
+                            <i class="fas fa-play"></i> Start Now
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Popular courses -->
+            <div class="popular-courses">
+                <div class="section-header">
+                    <div class="section-title">Popular Courses</div>
+                    <a href="#" class="section-link">See all</a>
+                </div>
+                
+                <div class="course-scroll">
+                    <div class="course-card">
+                        <div class="course-card-image">
+                            <img src="https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Anxiety Relief">
+                        </div>
+                        <div class="course-card-content">
+                            <div class="course-card-title">Anxiety Relief</div>
+                            <div class="course-card-info">
+                                <div>7 sessions</div>
+                                <div>5-10 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-card-image">
+                            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Basics">
+                        </div>
+                        <div class="course-card-content">
+                            <div class="course-card-title">Basics</div>
+                            <div class="course-card-info">
+                                <div>10 sessions</div>
+                                <div>3-5 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-card-image">
+                            <img src="https://images.unsplash.com/photo-1474418397713-7ede21d49118?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Stress Management">
+                        </div>
+                        <div class="course-card-content">
+                            <div class="course-card-title">Stress Management</div>
+                            <div class="course-card-info">
+                                <div>8 sessions</div>
+                                <div>10-15 min</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- New releases -->
+            <div class="popular-courses">
+                <div class="section-header">
+                    <div class="section-title">New Releases</div>
+                    <a href="#" class="section-link">See all</a>
+                </div>
+                
+                <div class="course-scroll">
+                    <div class="course-card">
+                        <div class="course-card-image">
+                            <img src="https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Nature Sounds">
+                        </div>
+                        <div class="course-card-content">
+                            <div class="course-card-title">Nature Sounds</div>
+                            <div class="course-card-info">
+                                <div>5 sessions</div>
+                                <div>20 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-card-image">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Beach Meditation">
+                        </div>
+                        <div class="course-card-content">
+                            <div class="course-card-title">Beach Meditation</div>
+                            <div class="course-card-info">
+                                <div>3 sessions</div>
+                                <div>15 min</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-card-image">
+                            <img src="https://images.unsplash.com/photo-1551772610-7cf0396fe8b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Gratitude Practice">
+                        </div>
+                        <div class="course-card-content">
+                            <div class="course-card-title">Gratitude Practice</div>
+                            <div class="course-card-info">
+                                <div>7 sessions</div>
+                                <div>5 min</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom navigation bar -->
+        <div class="tab-bar">
+            <a href="home.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-home"></i></div>
+                <div>Home</div>
+            </a>
+            <a href="discover.html" class="tab-item active">
+                <div class="tab-icon"><i class="fas fa-compass"></i></div>
+                <div>Discover</div>
+            </a>
+            <a href="sleep.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-moon"></i></div>
+                <div>Sleep</div>
+            </a>
+            <a href="profile.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-user"></i></div>
+                <div>Profile</div>
+            </a>
+            <a href="settings.html" class="tab-item">
+                <div class="tab-icon"><i class="fas fa-cog"></i></div>
+                <div>Settings</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html> 

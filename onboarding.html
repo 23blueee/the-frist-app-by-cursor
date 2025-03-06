@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Meditation App - Onboarding</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: white;
+        }
+        
+        .onboarding-container {
+            height: 100%;
+            position: relative;
+        }
+        
+        .onboarding-slide {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .onboarding-image {
+            width: 70%;
+            max-width: 300px;
+            margin-bottom: 40px;
+            border-radius: 20px;
+        }
+        
+        .onboarding-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-color);
+        }
+        
+        .onboarding-description {
+            font-size: 16px;
+            color: var(--light-text);
+            margin-bottom: 40px;
+            max-width: 300px;
+            line-height: 1.6;
+        }
+        
+        .onboarding-dots {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 0 5px;
+        }
+        
+        .dot.active {
+            background-color: var(--primary-color);
+            width: 20px;
+            border-radius: 4px;
+        }
+        
+        .onboarding-buttons {
+            width: 100%;
+            padding: 0 20px;
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .btn {
+            margin-bottom: 16px;
+        }
+        
+        .skip-link {
+            color: var(--light-text);
+            text-decoration: none;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="onboarding-container">
+        <div class="onboarding-slide">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Meditation" class="onboarding-image">
+            <h1 class="onboarding-title">Find Your Inner Peace</h1>
+            <p class="onboarding-description">Start your journey to mindfulness with guided meditations designed for every experience level.</p>
+            
+            <div class="onboarding-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            
+            <div class="onboarding-buttons">
+                <a href="home.html" class="btn btn-primary btn-large">Continue</a>
+                <a href="home.html" class="skip-link">Skip onboarding</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
